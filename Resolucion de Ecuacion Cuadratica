@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void
+validarDatos (double a, double b, double c)
+{
+  if (a == 0)
+	{
+	  throw invalid_argument ("El coeficiente 'a' no puede ser cero");
+	}
+}
+
+void
+resolverEcuacionCuadratica (double a, double b, double c)
+{
+  validarDatos (a, b, c);
+
+  double discriminante = b * b - 4 * a * c;
+
+  if (discriminante > 0)
+	{
+	  double x1 = (-b + sqrt (discriminante)) / (2 * a);
+	  double x2 = (-b - sqrt (discriminante)) / (2 * a);
+	  cout << "Dos soluciones reales distintas: x1 = " << x1 << ", x2 = " <<
+		x2 << endl;
+	}
+  else if (discriminante == 0)
+	{
+	  double x = -b / (2 * a);
+	  cout << "Una soluciC3n real C:nica: x = " << x << endl;
+	}
+  else
+	{
+	  double parteReal = -b / (2 * a);
+	  double parteImaginaria = sqrt (abs (discriminante)) / (2 * a);
+	  cout << "Dos soluciones complejas conjugadas: x1 = " << parteReal <<
+		" + " << parteImaginaria << "i, x2 = " << parteReal << " - " <<
+		parteImaginaria << "i" << endl;
+	}
+}
+
+int
+main ()
+{
+  double coeficiente_a, coeficiente_b, coeficiente_c;
+
+  cout << "Ingrese el coeficiente 'a': ";
+  cin >> coeficiente_a;
+
+  cout << "Ingrese el coeficiente 'b': ";
+  cin >> coeficiente_b;
+
+  cout << "Ingrese el coeficiente 'c': ";
+  cin >> coeficiente_c;
+  return 0;
+}
+
+
+  
