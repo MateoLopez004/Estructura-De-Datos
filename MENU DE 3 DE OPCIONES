@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cmath>
+#include <math.h>
+using namespace std;
+float calcularareadecuadrado(float lado1);
+float calcularareatriangulo(float altura, float base);
+float calculararearectangulo(float lado1, float lado2);
+
+int main() {
+	int opcion;
+	float lado1, lado2, altura, base;
+	do {
+		cout << "------MENU DE OPCIONES---------" << endl;
+		cout << "----- 1)Area de Cuadrado  -----" << endl;
+		cout << "----- 2)Area de Triangualo ----" << endl;
+		cout << "------3)Area de Rectangulo ----" << endl;
+		cout << "------0)Salir         ---------" << endl;
+		cout << "-------------------------------" << endl;
+		cout << "Ingrese la opcion que desea: ";
+		cin >> opcion;
+		switch (opcion) {
+		case 1:
+			cout << "Ingrese lado: ";
+			cin >> lado1;
+			if (lado1 <= 0) {
+				cout << "No puede haber lados iguales o menores a 0,Ingrese un dato valido" << endl;
+			}
+			else {
+				cout << "El area del cuadrado es: " << calcularareadecuadrado(lado1) << endl;
+			}
+			break;
+		case 2:
+			cout << "Ingrese altura: ";
+			cin >> altura;
+			cout << "Ingrese base: ";
+			cin >> base;
+			if (altura <= 0 || base <= 0) {
+				cout << "No puede tener bases o alturas menores o iguales a 0,ingrese un dato valido" << endl;
+			}
+			else {
+				cout << "El area del Triangulo es: " << calcularareatriangulo(altura, base) << endl;
+			}
+			break;
+		case 3:
+			cout << "Ingrese Lado 1: ";
+			cin >> lado1;
+			cout << "Ingrese Lado 2: ";
+			cin >> lado2;
+			if (lado1 <= 0 || lado2 <= 0) {
+				cout << "No puede tener lados menores o iguales a 0,ingrese un dato valido" << endl;
+			}
+			else {
+				cout << "El area del rectangulo es: " << calculararearectangulo(lado1, lado2) << endl;
+			}
+			break;
+		case 0:
+			cout << "Saliendo del programa......" << endl;
+			return 0;
+		}
+	} while (opcion >=1 || opcion <= 3);
+}
+
+float calcularareadecuadrado(float lado1) {
+	return lado1 * lado1;
+}
+float calcularareatriangulo(float altura, float base) {
+	return (base * altura) / 2;
+}
+float calculararearectangulo(float lado1, float lado2) {
+	return lado1 * lado2;
+}
