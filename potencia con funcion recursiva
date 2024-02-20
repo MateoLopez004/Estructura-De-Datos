@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int x;
+int y;
+int resultado;
+int potencia(int x,int y);
+int main() {
+	cout << "Ingrese X: ";
+	cin >> x;
+	cout << "Ingrese Y: ";
+	cin >> y;
+	cout << "Factorial de x es igual a: " << potencia(x, y) << endl;
+}
+
+int potencia(int x, int y) {
+	if (y == 0) {
+		return 1;
+	}
+	else {
+		return x * potencia(x, y - 1);
+	}
+}
