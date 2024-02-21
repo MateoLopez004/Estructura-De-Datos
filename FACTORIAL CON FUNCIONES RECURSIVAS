@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int FAC(int x);
+int main()
+{
+    int x;
+   cout<<"Ingrese X: ";
+   cin>>x;
+   if(x<-1){
+    cout<<"No Existen Factoriales de numeros negativos"<<endl;
+   }else { 
+    cout<<"FAC DE X= "<<FAC(x)<<endl;
+   }
+}
+int FAC(int x){
+    if (x=0){
+        return 1;
+    }else {
+    return x*FAC(x-1);    
+    }
+}
