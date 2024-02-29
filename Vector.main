@@ -1,0 +1,47 @@
+#include <iostream>
+
+#include "Vector.h"  
+
+#define MAX 10
+
+using namespace std;
+
+void main() {
+
+	int v[MAX], n, op;
+	Vector v1;  //declara una instacia del vector o un objeto
+	
+		cout << "ingrese el numero de elementos que debe ser menor que 10 : "; //validacion de entrada
+		do {
+		cin >> n;
+		} while  (n <= 0);
+		v1.set_n(n);//cambiando el valor ddel atributo del objeto
+	do {
+		cout << "-----       M E N U        -----\n";
+		cout << "|1.- Cargar Vector.            |\n";
+		cout << "|2.- Mostrar Vector.           |\n";
+		cout << "|3.- Ordenar Vector.           |\n";
+		cout << "|0.- Salir                     |\n";
+		cout << "--------------------------------\n";
+		cout << " elija una opcion\n";
+		cin >> op;
+		switch (op) {
+		case 1:
+			v1.cargarVector(v, n);  //Llamar al metodo
+			break;
+		case 2:
+			v1.mostrarVector(v, n);
+			break;
+		case 3:
+			v1.ordenarVecto(v, n);
+			break;
+		case 0:
+			cout << "salir \n";
+			break;
+		default:
+			cout << "opcion no valida \n";
+			break;
+		}
+	} while (op != 0);
+	
+}
