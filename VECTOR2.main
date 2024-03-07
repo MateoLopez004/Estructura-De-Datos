@@ -1,0 +1,32 @@
+#include <iostream>
+#include "Vector.h"
+#define MAX 100
+using namespace std;
+int main() {
+	int tamanio, v[MAX];
+	Vector vector1;   //declarar un objeto e instancia de clase
+	cout << "Ingresar el numero de elementos: ";
+	//Validacion de la entrada, garbage in garbage out
+	do {
+		cin >> tamanio;
+	} while (tamanio > MAX || tamanio < 0);
+	vector1.set_n(tamanio);//cambia el valor el atributo n de la clase vector
+	vector1.cargar(tamanio, v);
+	vector1.mostrar(v,tamanio);
+}
+#include <iostream>
+#include "Vector.h"
+#define MAX 100
+using namespace std;
+int main() {
+	int tamanio, v[MAX];
+	Vector vector1;   //declarar un objeto e instancia de clase
+	cout << "Ingresar el numero de elementos: ";
+	//Validacion de la entrada, garbage in garbage out
+	do {
+		cin >> tamanio;
+	} while (tamanio > MAX || tamanio < 0);
+	vector1.set_n(tamanio);//cambia el valor el atributo n de la clase vector
+	vector1.cargar(tamanio, v);
+	vector1.mostrar(v,tamanio);
+}
